@@ -50,6 +50,9 @@
                                         <div>
                                             <a href="{{ action('Admin\RecipeController@delete', ['id' => $recipe->id]) }}">削除</a>
                                         </div>
+                                        <div>
+                                            <a href="{{ action('Admin\RecipeController@commentAdd', ['id' => $recipe->id]) }}">コメント追加</a>
+                                        </div>
                                       </td>
                                 </tr>
                             @endforeach

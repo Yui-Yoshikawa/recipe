@@ -22,6 +22,8 @@ Route::group(['prefix' => 'admin' , 'middleware'=> 'auth'], function() {
     Route::get('recipe/edit', 'Admin\RecipeController@edit');
     Route::post('recipe/edit', 'Admin\RecipeController@update');
     Route::get('recipe/delete', 'Admin\RecipeController@delete');
+    Route::get('recipe/commentAdd', 'Admin\RecipeController@commentAdd');
+    Route::post('recipe/commentCreate', 'Admin\RecipeController@commentCreate');
     
     Route::get('profile', 'Admin\ProfileController@index');
     Route::get('profile/create', 'Admin\ProfileController@add');
@@ -32,3 +34,5 @@ Route::group(['prefix' => 'admin' , 'middleware'=> 'auth'], function() {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'RecipeController@index');
